@@ -1,3 +1,24 @@
-*{
-    
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#rod1 {
+    position: absolute;
+    width: 15rem;
+    height: 1rem;
+    border-radius: 1rem;
+    left: 40%;
+    background-color: aqua;
+}
+
+#rod2 {
+    position: absolute;
+    width: 15rem;
+    height: 1rem;
+    border-radius: 1rem;
+    left: 40%;
+    top: 97.5vh;
+    background-color: orange;
 }
