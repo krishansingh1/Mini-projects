@@ -1,0 +1,96 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+#container {
+  margin-left: 28vw;
+  display: grid;
+  justify-content: center;
+  margin-top: 5rem;
+  background-color: #e2e0e0;
+  width: 45vw;
+  border-radius: 0.5rem;
+}
+
+#heading {
+  margin-top: 1.5rem;
+  width: 37rem;
+  background-color: black;
+  color: white;
+}
+
+#heading h1 {
+  margin-left: 32%;
+  padding: 0.5rem 0;
+  text-transform: uppercase;
+}
+
+#open_space p {
+  width: 37rem;
+  height: 5rem;
+  background-color: #f5f5f5;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  border: none;
+  caret-color: transparent;
+  font-size: 3rem;
+}
+
+#table {
+  width: 37rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+#table button {
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  width: 145px;
+  height: 50px;
+  font-size: 1.5rem;
+  background-color: white;
+}
+
+#table button:hover {
+  background-color: #ffc877;
+}
+
+#button-size input {
+  border: none;
+  width: 18.25rem;
+  height: 50px;
+  font-size: 1.5rem;
+  background-color: white;
+  cursor: pointer;
+}
+
+#button-size input:hover {
+  background-color: #ffc877;
+}
+
+#changeColor button {
+  background-color: #c14444;
+}
+
+#changeColor1 button {
+  background-color: #c14444;
+}
+
+#changeColor2 button {
+  background-color: #c14444;
+}
+
+#changeColor3 button {
+  background-color: #c14444;
+}
+
+#changeColor4 button {
+  background-color: #c14444;
+}
