@@ -9,8 +9,8 @@ let rod1Width = Rod1.offsetWidth;
 let rod2Height = Rod2.offsetHeight;
 let rod2Width = Rod2.offsetWidth;
 
-Rod1.addEventListener("keypress", () => {});
-
-Rod2.addEventListener("keypress", () => {});
+window.addEventListener("keypress", () => {
+    
+});
 
 function moveHorizontally(element) {}
