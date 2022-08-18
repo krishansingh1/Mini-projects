@@ -4,21 +4,29 @@
     box-sizing: border-box;
 }
 
+body{
+    font-family: sans-serif;
+}
+
 #rod1 {
     position: absolute;
     width: 15rem;
-    height: 1rem;
+    height: 1.5rem;
     border-radius: 1rem;
     left: 40%;
     background-color: aqua;
+    text-align: center;
+    padding-top: 3px;
 }
 
 #rod2 {
     position: absolute;
     width: 15rem;
-    height: 1rem;
+    height: 1.5rem;
     border-radius: 1rem;
     left: 40%;
-    top: 97.5vh;
+    top: 95vh;
     background-color: orange;
+    text-align: center;
+    padding-top: 3px;
 }
