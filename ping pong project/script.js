@@ -22,14 +22,20 @@ function moveHorizontally(element) {
   let left1 = parseInt(Rod1.style.left);
   let left2 = parseInt(Rod2.style.left);
 
-  if (
-    element.key === "d" ||
-    element.key === "D" ||
-    element.code === "37" ||
-    element.code === "39"
-  ) {
+  if (element.key === "a" || element.key === "A" || element.keyCode === "37") {
+    if (left1 > 15) {
+      Rod1.style.left = setValue(left1 - 20);
+    }
+    if (left2 > 15) {
+      Rod2.style.left = setValue(left2 - 20);
+    }
+  }
+  if (element.key === "d" || element.key === "D" || element.keyCode === "39") {
     if (left1 < window.innerWidth - rod1Width - 15) {
-      rod1Height.style.left = setValue(left1 + 5);
+      Rod1.style.left = setValue(left1 + 20);
+    }
+    if (left2 < window.innerWidth - rod2Width - 15) {
+      Rod2.style.left = setValue(left2 + 20);
     }
   }
 }
