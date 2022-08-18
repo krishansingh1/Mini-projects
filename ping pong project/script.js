@@ -9,7 +9,10 @@ let rod1Width = Rod1.offsetWidth;
 let rod2Height = Rod2.offsetHeight;
 let rod2Width = Rod2.offsetWidth;
 
-window.addEventListener("keypress", () => {});
+window.addEventListener("keypress", (e) => {
+  e.preventDefault();
+  moveHorizontally(e);
+});
 
 function setValue(value) {
   return value + "px";
@@ -19,7 +22,12 @@ function moveHorizontally(element) {
   let lef1 = parseInt(Rod1.style.left);
   let left2 = parseInt(Rod2.style.left);
 
-  if(element.key==="d" || element.key==="D" || element.code==="37" || element.code==="39"){
+  if (
+    element.key === "d" ||
+    element.key === "D" ||
+    element.code === "37" ||
+    element.code === "39"
+  ) {
     
   }
 }
