@@ -20,6 +20,16 @@ body{
     padding-top: 3px;
 }
 
+#ball{
+    position: relative;
+    left: 40.5rem;
+    top: 36rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: red;
+    border-radius: 50%;
+}
+
 #rod2 {
     position: absolute;
     width: 15rem;
