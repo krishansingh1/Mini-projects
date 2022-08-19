@@ -12,7 +12,7 @@ let board_cord = board.getBoundingClientRect();
 
 let dx = Math.floor(Math.random() * 4) + 3;
 let dy = Math.floor(Math.random() * 4) + 3;
-let dxd = Marh.floor(Marh.random() * 2);
+let dxd = Math.floor(Math.random() * 2);
 let dyd = Math.floor(Math.random() * 2);
 
 document.addEventListener("keydown", (e) => {
@@ -22,7 +22,7 @@ document.addEventListener("keydown", (e) => {
       requestAnimationFrame(() => {
         dx = Math.floor(Math.random() * 4) + 3;
         dy = Math.floor(Math.random() * 4) + 3;
-        dxd = Marh.floor(Marh.random() * 2);
+        dxd = Math.floor(Math.random() * 2);
         dyd = Math.floor(Math.random() * 2);
         moveBall(dx, dy, dxd, dyd);
       });
