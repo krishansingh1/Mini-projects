@@ -1,3 +1,6 @@
+let gameState = "start";
+let initial_ball = document.getElementById("ball");
+let ball = document.getElementById("ball");
 const Rod1 = document.getElementById("rod1");
 const Rod2 = document.getElementById("rod2");
 
