@@ -15,6 +15,13 @@ let dy = Math.floor(Math.random() * 4) + 3;
 let dxd = Math.floor(Math.random() * 2);
 let dyd = Math.floor(Math.random() * 2);
 
+let score1 = 0;
+let score2 = 0;
+localStorage.setItem("Score1", score1);
+localStorage.setItem("Score2", score2);
+const latestScore1 = localStorage.getItem("Score1");
+const latestScore2 = localStorage.getItem("Score2");
+
 document.addEventListener("keydown", (e) => {
   if ((e.key = "Enter")) {
     gameState = gameState == "start" ? "play" : "start";
@@ -28,46 +35,54 @@ document.addEventListener("keydown", (e) => {
       });
     }
   }
-});
 
-Rod1.style.left = Rod1.offsetLeft + "px";
-Rod2.style.left = Rod2.offsetLeft + "px";
+  if (gameState == "play") {
+    Rod1.style.left = Rod1.offsetLeft + "px";
+    Rod2.style.left = Rod2.offsetLeft + "px";
 
-let rod1Height = Rod1.offsetHeight;
-let rod1Width = Rod1.offsetWidth;
-let rod2Height = Rod2.offsetHeight;
-let rod2Width = Rod2.offsetWidth;
+    let rod1Width = Rod1.offsetWidth;
+    let rod2Width = Rod2.offsetWidth;
 
-window.addEventListener("keypress", (e) => {
-  e.preventDefault();
-  moveHorizontally(e);
-});
+    window.addEventListener("keypress", (e) => {
+      e.preventDefault();
+      moveHorizontally(e);
+    });
 
-function setValue(value) {
-  return value + "px";
-}
-
-function moveHorizontally(element) {
-  let left1 = parseInt(Rod1.style.left);
-  let left2 = parseInt(Rod2.style.left);
-
-  if (element.key === "a" || element.key === "A" || element.keyCode === "37") {
-    if (left1 > 15) {
-      Rod1.style.left = setValue(left1 - 20);
+    function setValue(value) {
+      return value + "px";
     }
-    if (left2 > 15) {
-      Rod2.style.left = setValue(left2 - 20);
+
+    function moveHorizontally(element) {
+      let left1 = parseInt(Rod1.style.left);
+      let left2 = parseInt(Rod2.style.left);
+
+      if (
+        element.key === "a" ||
+        element.key === "A" ||
+        element.keyCode === "37"
+      ) {
+        if (left1 > 15) {
+          Rod1.style.left = setValue(left1 - 10);
+        }
+        if (left2 > 15) {
+          Rod2.style.left = setValue(left2 - 10);
+        }
+      }
+      if (
+        element.key === "d" ||
+        element.key === "D" ||
+        element.keyCode === "39"
+      ) {
+        if (left1 < window.innerWidth - rod1Width - 15) {
+          Rod1.style.left = setValue(left1 + 10);
+        }
+        if (left2 < window.innerWidth - rod2Width - 15) {
+          Rod2.style.left = setValue(left2 + 10);
+        }
+      }
     }
   }
-  if (element.key === "d" || element.key === "D" || element.keyCode === "39") {
-    if (left1 < window.innerWidth - rod1Width - 15) {
-      Rod1.style.left = setValue(left1 + 20);
-    }
-    if (left2 < window.innerWidth - rod2Width - 15) {
-      Rod2.style.left = setValue(left2 + 20);
-    }
-  }
-}
+});
 
 function moveBall(dx, dy, dxd, dyd) {
   if (ball_cord.top <= board_cord.top) {
@@ -95,4 +110,23 @@ function moveBall(dx, dy, dxd, dyd) {
     dx = Math.floor(Math.random() * 4) + 3;
     dy = Math.floor(Math.random() * 4) + 3;
   }
+
+  if (ball_cord <= board_cord.left || ball_cord.right >= board_cord.right) {
+    if (ball_cord.left <= board_cord.left) {
+      score1 += 100;
+    } else {
+      score2 += 100;
+    }
+    gameState = "start";
+
+    ball_cord = initial_ball_cord;
+    ball.style = initial_ball.style;
+    return;
+  }
+  ball.style.top = ball_cord.top + dy * (dyd == 0 ? -1 : 1) + "px";
+  ball.style.left = ball_cord.left + dx * (dxd == 0 ? -1 : 1) + "px";
+  ball_cord = ball.getBoundingClientRect();
+  requestAnimationFrame(() => {
+    moveBall(dx, dy, dxd, dyd);
+  });
 }
