@@ -9,13 +9,26 @@ body {
     background-color: #000000;
 }
 
+#player-details {
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+}
+
+#player-details div {
+    padding-left: 5rem;
+}
+
+#message {}
+
+
 #rod1 {
     position: absolute;
-    width: 15rem;
-    height: 1.5rem;
+    width: 1.5rem;
+    height: 12rem;
     border-radius: 1rem;
-    left: 40%;
-    top: 1%;
+    top: 14rem;
+    left: 0.5rem;
     background-color: #ffffff;
     text-align: center;
     padding-top: 3px;
@@ -33,11 +46,11 @@ body {
 
 #rod2 {
     position: absolute;
-    width: 15rem;
-    height: 1.5rem;
+    width: 1.5rem;
+    height: 12rem;
     border-radius: 1rem;
-    left: 40%;
-    top: 95vh;
+    left: 83.5rem;
+    top: 14rem;
     background-color: #ffffff;
     text-align: center;
     padding-top: 3px;
