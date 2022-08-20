@@ -14,7 +14,7 @@ body {
     justify-content: center;
     color: #ffffff;
     margin-top: 2rem;
-    font-family:monospace;
+    font-family: monospace;
     font-size: 1.3rem;
     font-weight: bold;
 }
@@ -37,8 +37,8 @@ body {
 
 #ball {
     position: relative;
-    left: 40.5rem;
-    top: 18rem;
+    left: 44rem;
+    top: 15.5rem;
     width: 1.5rem;
     height: 1.5rem;
     background-color: #ffffff;
