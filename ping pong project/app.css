@@ -53,7 +53,8 @@ body {
 .player_1_score {
     height: 50px;
     width: 50px;
-    color: chartreuse;
+    color: #000000;
+    font-family: monospace;
     position: fixed;
     left: 30vw;
     margin-top: 30px;
@@ -62,7 +63,8 @@ body {
 .player_2_score {
     height: 50px;
     width: 50px;
-    color: chartreuse;
+    color: #000000;
+    font-family: monospace;
     position: fixed;
     left: 70vw;
     margin-top: 30px;
@@ -70,10 +72,11 @@ body {
 
 .message {
     position: fixed;
-    /* color: #48426d; */
     height: 10vh;
     width: 30vw;
-    color: #c9cbff;
+    font-size: 1.5rem;
+    color: #000000;
+    font-family: monospace;
     left: 38vw;
     margin: 30px auto auto auto;
 }

@@ -24,7 +24,7 @@ document.addEventListener("keydown", (e) => {
     gameState = gameState == "start" ? "play" : "start";
     if (gameState == "play") {
       message.innerHTML = "Game Started";
-      message.style.left = 42 + "vw";
+      message.style.left = 44 + "vw";
       requestAnimationFrame(() => {
         dx = Math.floor(Math.random() * 4) + 3;
         dy = Math.floor(Math.random() * 4) + 3;
