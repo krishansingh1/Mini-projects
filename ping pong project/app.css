@@ -13,6 +13,10 @@ body {
     display: flex;
     justify-content: center;
     color: #ffffff;
+    margin-top: 2rem;
+    font-family:monospace;
+    font-size: 1.3rem;
+    font-weight: bold;
 }
 
 #player-details div {
