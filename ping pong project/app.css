@@ -5,54 +5,75 @@
 }
 
 body {
-    font-family: sans-serif;
+    height: 100vh;
+    width: 100vw;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board {
+    height: 85vh;
+    width: 80vw;
+    background-color: #ffffff;
+    border-radius: 14px;
+}
+
+.ball {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    position: fixed;
+    top: calc(50% - 15px);
+    left: calc(50% - 15px);
     background-color: #000000;
 }
 
-#player-details {
-    display: flex;
-    justify-content: center;
-    color: #ffffff;
-    margin-top: 2rem;
-    font-family: monospace;
-    font-size: 1.3rem;
-    font-weight: bold;
+.paddle_1 {
+    height: 150px;
+    width: 18px;
+    position: fixed;
+    top: 15rem;
+    background-color: #000000;
+    margin-left: 0.1rem;
+    border-radius: 0.5rem;
 }
 
-#player-details div {
-    padding-left: 5rem;
+.paddle_2 {
+    height: 150px;
+    width: 18px;
+    position: fixed;
+    top: 15rem;
+    left: 75.6rem;
+    background-color: black;
+    border-radius: 0.5rem;
 }
 
-#rod1 {
-    position: absolute;
-    width: 1.5rem;
-    height: 12rem;
-    border-radius: 1rem;
-    top: 14rem;
-    left: 0.5rem;
-    background-color: #ffffff;
-    text-align: center;
-    padding-top: 3px;
+.player_1_score {
+    height: 50px;
+    width: 50px;
+    color: chartreuse;
+    position: fixed;
+    left: 30vw;
+    margin-top: 30px;
 }
 
-#ball {
-    position: relative;
-    left: 44rem;
-    top: 15.5rem;
-    width: 1.5rem;
-    height: 1.5rem;
-    background-color: #ffffff;
-    border-radius: 50%;
+.player_2_score {
+    height: 50px;
+    width: 50px;
+    color: chartreuse;
+    position: fixed;
+    left: 70vw;
+    margin-top: 30px;
 }
 
-#rod2 {
-    position: absolute;
-    width: 1.5rem;
-    height: 12rem;
-    border-radius: 1rem;
-    left: 83.5rem;
-    top: 14rem;
-    background-color: #ffffff;
-    text-align: center;
-    padding-top: 3px;
+.message {
+    position: fixed;
+    /* color: #48426d; */
+    height: 10vh;
+    width: 30vw;
+    color: #c9cbff;
+    left: 38vw;
+    margin: 30px auto auto auto;
 }

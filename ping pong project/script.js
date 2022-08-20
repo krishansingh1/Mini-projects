@@ -1,18 +1,18 @@
 let gameState = "start";
-let Rod1 = document.getElementById("rod1");
-let Rod2 = document.getElementById("rod2");
-let board = document.getElementById("board");
-let initial_ball = document.getElementById("ball");
-let ball = document.getElementById("ball");
-let score_1 = document.getElementById("player_1_score");
-let score_2 = document.getElementById("player_2_score");
-let message = document.getElementById("message");
-let Rod1_coord = Rod1.getBoundingClientRect();
-let Rod2_coord = Rod2.getBoundingClientRect();
-let initial_ball_cord = ball.getBoundingClientRect();
-let ball_cord = initial_ball_cord;
-let board_cord = board.getBoundingClientRect();
-let Rod_common = document.querySelector(".rod").getBoundingClientRect();
+let paddle_1 = document.querySelector(".paddle_1");
+let paddle_2 = document.querySelector(".paddle_2");
+let board = document.querySelector(".board");
+let initial_ball = document.querySelector(".ball");
+let ball = document.querySelector(".ball");
+let score_1 = document.querySelector(".player_1_score");
+let score_2 = document.querySelector(".player_2_score");
+let message = document.querySelector(".message");
+let paddle_1_coord = paddle_1.getBoundingClientRect();
+let paddle_2_coord = paddle_2.getBoundingClientRect();
+let initial_ball_coord = ball.getBoundingClientRect();
+let ball_coord = initial_ball_coord;
+let board_coord = board.getBoundingClientRect();
+let paddle_common = document.querySelector(".paddle").getBoundingClientRect();
 
 let dx = Math.floor(Math.random() * 4) + 3;
 let dy = Math.floor(Math.random() * 4) + 3;
@@ -24,89 +24,100 @@ document.addEventListener("keydown", (e) => {
     gameState = gameState == "start" ? "play" : "start";
     if (gameState == "play") {
       message.innerHTML = "Game Started";
+      message.style.left = 42 + "vw";
       requestAnimationFrame(() => {
         dx = Math.floor(Math.random() * 4) + 3;
         dy = Math.floor(Math.random() * 4) + 3;
         dxd = Math.floor(Math.random() * 2);
         dyd = Math.floor(Math.random() * 2);
-        // moveBall(dx, dy, dxd, dyd);
+        moveBall(dx, dy, dxd, dyd);
       });
     }
   }
-
   if (gameState == "play") {
-    if (e.key == "w" || e.key == "W") {
-      Rod1.style.top =
-        Math.max(board_cord.top, Rod1_coord.top - window.innerHeight * 0.06) +
-        "px";
-      Rod1_coord = Rod1.getBoundingClientRect();
+    if (e.key == "w") {
+      paddle_1.style.top =
+        Math.max(
+          board_coord.top,
+          paddle_1_coord.top - window.innerHeight * 0.1
+        ) + "px";
+      paddle_1_coord = paddle_1.getBoundingClientRect();
 
-      Rod2.style.top =
-        Math.max(board_cord.top, Rod2_coord.top - window.innerHeight * 0.06) +
-        "px";
-      Rod2_coord = Rod2.getBoundingClientRect();
+      paddle_2.style.top =
+        Math.max(
+          board_coord.top,
+          paddle_2_coord.top - window.innerHeight * 0.1
+        ) + "px";
+      paddle_2_coord = paddle_2.getBoundingClientRect();
+    }
+    if (e.key == "s") {
+      paddle_1.style.top =
+        Math.min(
+          board_coord.bottom - paddle_common.height,
+          paddle_1_coord.top + window.innerHeight * 0.1
+        ) + "px";
+      paddle_1_coord = paddle_1.getBoundingClientRect();
+
+      paddle_2.style.top =
+        Math.min(
+          board_coord.bottom - paddle_common.height,
+          paddle_2_coord.top + window.innerHeight * 0.1
+        ) + "px";
+      paddle_2_coord = paddle_2.getBoundingClientRect();
     }
 
-    if (e.key == "s" || e.key == "S") {
-      Rod1.style.top =
-        Math.min(
-          board_cord.bottom - Rod_common.height,
-          Rod1_coord.top + window.innerHeight * 0.06
-        ) + "px";
-      Rod1_coord = Rod1.getBoundingClientRect();
-
-      Rod2.style.top =
-        Math.min(
-          board_cord.bottom - Rod_common.height,
-          Rod2_coord.top + window.innerHeight * 0.06
-        ) + "px";
-      Rod2_coord = Rod2.getBoundingClientRect();
+    if (e.key == "ArrowUp") {
+    }
+    if (e.key == "ArrowDown") {
     }
   }
 });
 
 function moveBall(dx, dy, dxd, dyd) {
-  if (ball_cord.top <= board_cord.top) {
+  if (ball_coord.top <= board_coord.top) {
     dyd = 1;
   }
-  if (ball_cord.bottom >= board_cord.bottom) {
+  if (ball_coord.bottom >= board_coord.bottom) {
     dyd = 0;
   }
   if (
-    ball_cord.left <= Rod1_coord.right &&
-    ball_cord.top >= Rod1_coord.top &&
-    ball_cord.bottom <= Rod1_coord.bottom
+    ball_coord.left <= paddle_1_coord.right &&
+    ball_coord.top >= paddle_1_coord.top &&
+    ball_coord.bottom <= paddle_1_coord.bottom
   ) {
     dxd = 1;
     dx = Math.floor(Math.random() * 4) + 3;
     dy = Math.floor(Math.random() * 4) + 3;
   }
-
   if (
-    ball_cord.right >= Rod2_coord.left &&
-    ball_cord.top >= Rod2_coord.top &&
-    ball_cord.bottom <= Rod2_coord.bottom
+    ball_coord.right >= paddle_2_coord.left &&
+    ball_coord.top >= paddle_2_coord.top &&
+    ball_coord.bottom <= paddle_2_coord.bottom
   ) {
     dxd = 0;
     dx = Math.floor(Math.random() * 4) + 3;
     dy = Math.floor(Math.random() * 4) + 3;
   }
-
-  if (ball_cord <= board_cord.left || ball_cord.right >= board_cord.right) {
-    if (ball_cord.left <= board_cord.left) {
-      score1 += 100;
+  if (
+    ball_coord.left <= board_coord.left ||
+    ball_coord.right >= board_coord.right
+  ) {
+    if (ball_coord.left <= board_coord.left) {
+      score_2.innerHTML = +score_2.innerHTML + 1;
     } else {
-      score2 += 100;
+      score_1.innerHTML = +score_1.innerHTML + 1;
     }
     gameState = "start";
 
-    ball_cord = initial_ball_cord;
+    ball_coord = initial_ball_coord;
     ball.style = initial_ball.style;
+    message.innerHTML = "Press Enter to Play Pong";
+    message.style.left = 38 + "vw";
     return;
   }
-  ball.style.top = ball_cord.top + dy * (dyd == 0 ? -1 : 1) + "px";
-  ball.style.left = ball_cord.left + dx * (dxd == 0 ? -1 : 1) + "px";
-  ball_cord = ball.getBoundingClientRect();
+  ball.style.top = ball_coord.top + dy * (dyd == 0 ? -1 : 1) + "px";
+  ball.style.left = ball_coord.left + dx * (dxd == 0 ? -1 : 1) + "px";
+  ball_coord = ball.getBoundingClientRect();
   requestAnimationFrame(() => {
     moveBall(dx, dy, dxd, dyd);
   });
