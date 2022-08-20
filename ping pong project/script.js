@@ -24,11 +24,25 @@ let dx = Math.floor(Math.random() * 4) + 3;
 let dy = Math.floor(Math.random() * 4) + 3;
 let dxd = Math.floor(Math.random() * 2);
 let dyd = Math.floor(Math.random() * 2);
-
+let score1 = 0;
+let score2 = 0;
 //Keyboard Event Listener for starting a game
 document.addEventListener("keydown", (e) => {
   //press enter to start game
   if (e.key == "Enter") {
+    //Storage Logic
+    let Player1Score = localStorage.getItem("Score1");
+    let Player2Score = localStorage.getItem("Score2");
+
+    if (Player1Score && Player2Score == 0) {
+      window.alert("This is you first Time. Use W and S to Play");
+    } else if (Player1Score < Player2Score) {
+      window.alert("Highest Score is " + Player2Score + " of" + " Player2");
+    } else if (Player2Score < Player1Score) {
+      window.alert("Highest Score is: " + Player1Score + " of" + " Player1");
+    }
+
+    //Game Logic
     gameState = gameState == "start" ? "play" : "start";
     if (gameState == "play") {
       message.innerHTML = "Game Started";
@@ -116,9 +130,11 @@ function moveBall(dx, dy, dxd, dyd) {
     ball_coord.right >= board_coord.right
   ) {
     if (ball_coord.left <= board_coord.left) {
-      score_2.innerHTML = +score_2.innerHTML + 1;
+      score2 = parseInt((score_2.innerHTML = +score_2.innerHTML + 1));
+      localStorage.setItem("Score2", JSON.stringify(score2));
     } else {
-      score_1.innerHTML = +score_1.innerHTML + 1;
+      score1 = parseInt((score_1.innerHTML = +score_1.innerHTML + 1));
+      localStorage.setItem("Score1", JSON.stringify(score1));
     }
     gameState = "start";
 
