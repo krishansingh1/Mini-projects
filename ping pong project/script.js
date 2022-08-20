@@ -46,7 +46,19 @@ document.addEventListener("keydown", (e) => {
     }
 
     if (e.key == "s" || e.key == "S") {
-      Rod1.style.top=Math.min(board_cord.bottom -Rod)
+      Rod1.style.top =
+        Math.min(
+          board_cord.bottom - Rod_common.height,
+          Rod1_coord.top + window.innerHeight * 0.06
+        ) + "px";
+      Rod1_coord = Rod1.getBoundingClientRect();
+
+      Rod2.style.top =
+        Math.min(
+          board_cord.bottom - Rod_common.height,
+          Rod2_coord.top + window.innerHeight * 0.06
+        ) + "px";
+      Rod2_coord = Rod2.getBoundingClientRect();
     }
   }
 });
