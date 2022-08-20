@@ -1,6 +1,11 @@
+//All Elements to be used for manipluation
 let gameState = "start";
 let paddle_1 = document.querySelector(".paddle_1");
 let paddle_2 = document.querySelector(".paddle_2");
+let initial_paddle_1 = document.querySelector(".paddle_1");
+let initial_paddle_2 = document.querySelector(".paddle_2");
+let initial_paddle_coord_1 = paddle_1.getBoundingClientRect();
+let initial_paddle_coord_2 = paddle_2.getBoundingClientRect();
 let board = document.querySelector(".board");
 let initial_ball = document.querySelector(".ball");
 let ball = document.querySelector(".ball");
@@ -14,12 +19,15 @@ let ball_coord = initial_ball_coord;
 let board_coord = board.getBoundingClientRect();
 let paddle_common = document.querySelector(".paddle").getBoundingClientRect();
 
+//Elements for Directions of Ball
 let dx = Math.floor(Math.random() * 4) + 3;
 let dy = Math.floor(Math.random() * 4) + 3;
 let dxd = Math.floor(Math.random() * 2);
 let dyd = Math.floor(Math.random() * 2);
 
+//Keyboard Event Listener for starting a game
 document.addEventListener("keydown", (e) => {
+  //press enter to start game
   if (e.key == "Enter") {
     gameState = gameState == "start" ? "play" : "start";
     if (gameState == "play") {
@@ -34,8 +42,12 @@ document.addEventListener("keydown", (e) => {
       });
     }
   }
+
+  //Manipulating Rods using Key event property
   if (gameState == "play") {
-    if (e.key == "w") {
+    //If w is pressed
+    if (e.key == "w" || e.key == "W") {
+      //Manipulating Paddle 1
       paddle_1.style.top =
         Math.max(
           board_coord.top,
@@ -43,6 +55,7 @@ document.addEventListener("keydown", (e) => {
         ) + "px";
       paddle_1_coord = paddle_1.getBoundingClientRect();
 
+      //Manipulating Paddle 2
       paddle_2.style.top =
         Math.max(
           board_coord.top,
@@ -50,7 +63,10 @@ document.addEventListener("keydown", (e) => {
         ) + "px";
       paddle_2_coord = paddle_2.getBoundingClientRect();
     }
-    if (e.key == "s") {
+
+    //If S is pressed
+    if (e.key == "s" || e.key == "S") {
+      //Manipulating Paddle 1
       paddle_1.style.top =
         Math.min(
           board_coord.bottom - paddle_common.height,
@@ -58,6 +74,7 @@ document.addEventListener("keydown", (e) => {
         ) + "px";
       paddle_1_coord = paddle_1.getBoundingClientRect();
 
+      //Manipulating Paddle 2
       paddle_2.style.top =
         Math.min(
           board_coord.bottom - paddle_common.height,
@@ -65,14 +82,10 @@ document.addEventListener("keydown", (e) => {
         ) + "px";
       paddle_2_coord = paddle_2.getBoundingClientRect();
     }
-
-    if (e.key == "ArrowUp") {
-    }
-    if (e.key == "ArrowDown") {
-    }
   }
 });
 
+//Function for Ball moving
 function moveBall(dx, dy, dxd, dyd) {
   if (ball_coord.top <= board_coord.top) {
     dyd = 1;
@@ -111,6 +124,10 @@ function moveBall(dx, dy, dxd, dyd) {
 
     ball_coord = initial_ball_coord;
     ball.style = initial_ball.style;
+    paddle_1_coord = initial_paddle_coord_1;
+    paddle_1.style = initial_paddle_1.style;
+    paddle_2_coord = initial_paddle_coord_2;
+    paddle_2.style = initial_paddle_2.style;
     message.innerHTML = "Press Enter to Play Pong";
     message.style.left = 38 + "vw";
     return;
