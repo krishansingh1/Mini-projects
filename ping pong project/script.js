@@ -6,6 +6,7 @@ let initial_ball = document.getElementById("ball");
 let ball = document.getElementById("ball");
 let score_1 = document.getElementById("player_1_score");
 let score_2 = document.getElementById("player_2_score");
+let message = document.getElementById("message");
 let Rod1_coord = Rod1.getBoundingClientRect();
 let Rod2_coord = Rod2.getBoundingClientRect();
 let initial_ball_cord = ball.getBoundingClientRect();
@@ -19,15 +20,16 @@ let dxd = Math.floor(Math.random() * 2);
 let dyd = Math.floor(Math.random() * 2);
 
 document.addEventListener("keydown", (e) => {
-  if ((e.key = "Enter")) {
+  if (e.key == "Enter") {
     gameState = gameState == "start" ? "play" : "start";
     if (gameState == "play") {
+      message.innerHTML = "Game Started";
       requestAnimationFrame(() => {
         dx = Math.floor(Math.random() * 4) + 3;
         dy = Math.floor(Math.random() * 4) + 3;
         dxd = Math.floor(Math.random() * 2);
         dyd = Math.floor(Math.random() * 2);
-        moveBall(dx, dy, dxd, dyd);
+        // moveBall(dx, dy, dxd, dyd);
       });
     }
   }
