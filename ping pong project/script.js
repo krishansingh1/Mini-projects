@@ -159,16 +159,15 @@ function moveBall(dx, dy, dxd, dyd) {
     moveBall(dx, dy, dxd, dyd);
   });
 }
-
 //Highest Score on every game
 document.addEventListener("keypress", (e) => {
   if (e.key == "Enter") {
     let Player1Score = localStorage.getItem("Score1");
     let Player2Score = localStorage.getItem("Score2");
-
     if (Player1Score == 0 && Player2Score == 0) {
       window.alert("This is you first Time. Use W and S to Play");
-    } else if (Player1Score < Player2Score) {
+    }
+    if (Player1Score < Player2Score) {
       window.alert("Highest Score is " + Player2Score + " of" + " Player2");
     } else if (Player2Score < Player1Score) {
       window.alert("Highest Score is: " + Player1Score + " of" + " Player1");
