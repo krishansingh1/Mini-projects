@@ -122,20 +122,9 @@ function moveBall(dx, dy, dxd, dyd) {
     if (ball_coord.left <= board_coord.left) {
       score2 = parseInt((score_2.innerHTML = +score_2.innerHTML + 1));
       localStorage.setItem("Score2", JSON.stringify(score2));
-
-      if (score2 == 11) {
-        if (score2 <= highScore && score2 < score1) {
-          window.alert("Player 2 is Winner " + score2);
-        }
-      }
     } else {
       score1 = parseInt((score_1.innerHTML = +score_1.innerHTML + 1));
       localStorage.setItem("Score1", JSON.stringify(score1));
-      if (score1 == 11) {
-        if (score1 <= highScore && score2 < score1) {
-          window.alert("Player 1 is Winner " + score1);
-        }
-      }
     }
     gameState = "start";
 
