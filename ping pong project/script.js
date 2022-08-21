@@ -91,12 +91,15 @@ document.addEventListener("keydown", (e) => {
 
 //Function for Ball moving
 function moveBall(dx, dy, dxd, dyd) {
+  //If ball hits top
   if (ball_coord.top <= board_coord.top) {
     dyd = 1;
   }
+  //If ball hits bottom
   if (ball_coord.bottom >= board_coord.bottom) {
     dyd = 0;
   }
+  //If ball hits left
   if (
     ball_coord.left <= paddle_1_coord.right &&
     ball_coord.top >= paddle_1_coord.top &&
@@ -106,6 +109,7 @@ function moveBall(dx, dy, dxd, dyd) {
     dx = Math.floor(Math.random() * 4) + 3;
     dy = Math.floor(Math.random() * 4) + 3;
   }
+  //If ball hits right
   if (
     ball_coord.right >= paddle_2_coord.left &&
     ball_coord.top >= paddle_2_coord.top &&
@@ -115,6 +119,8 @@ function moveBall(dx, dy, dxd, dyd) {
     dx = Math.floor(Math.random() * 4) + 3;
     dy = Math.floor(Math.random() * 4) + 3;
   }
+  //If right side lose score to right side
+  //If right side lose score to right side
   if (
     ball_coord.left <= board_coord.left ||
     ball_coord.right >= board_coord.right
@@ -132,6 +138,7 @@ function moveBall(dx, dy, dxd, dyd) {
         alert("Player 1 is winner " + score1);
       }
     }
+    //Reseting the game
     gameState = "start";
 
     ball_coord = initial_ball_coord;
@@ -144,6 +151,7 @@ function moveBall(dx, dy, dxd, dyd) {
     message.style.left = 38 + "vw";
     return;
   }
+  //running the function per frame
   ball.style.top = ball_coord.top + dy * (dyd == 0 ? -1 : 1) + "px";
   ball.style.left = ball_coord.left + dx * (dxd == 0 ? -1 : 1) + "px";
   ball_coord = ball.getBoundingClientRect();
@@ -152,6 +160,7 @@ function moveBall(dx, dy, dxd, dyd) {
   });
 }
 
+//Highest Score on every game
 document.addEventListener("keypress", (e) => {
   if (e.key == "Enter") {
     let Player1Score = localStorage.getItem("Score1");
