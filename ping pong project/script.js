@@ -166,7 +166,7 @@ document.addEventListener("keypress", (e) => {
     let Player1Score = localStorage.getItem("Score1");
     let Player2Score = localStorage.getItem("Score2");
 
-    if (Player1Score && Player2Score == 0) {
+    if (Player1Score == 0 && Player2Score == 0) {
       window.alert("This is you first Time. Use W and S to Play");
     } else if (Player1Score < Player2Score) {
       window.alert("Highest Score is " + Player2Score + " of" + " Player2");
