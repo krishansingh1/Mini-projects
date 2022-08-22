@@ -1,5 +1,5 @@
 let promise = new Promise((resolve, reject) => {
-  reject("Someting went wrong");
+  reject("Something went wrong");
 });
 
 console.log(promise);
