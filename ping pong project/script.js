@@ -129,7 +129,7 @@ function moveBall(dx, dy, dxd, dyd) {
       score2 = parseInt((score_2.innerHTML = +score_2.innerHTML + 1));
       localStorage.setItem("Score2", JSON.stringify(score2));
       if (score1 <= highScore && score1 < score2) {
-        alert("Player 1 is winner " + score2);
+        alert("Player 2 is winner " + score2);
       }
     } else {
       score1 = parseInt((score_1.innerHTML = +score_1.innerHTML + 1));
