@@ -5,6 +5,6 @@ let promise = new Promise((resolve, reject) => {
     reject("Something Went Wrong");
   }, 3000);
 });
-
+console.log(promise);
 promise.then((data) => console.log(data));
 promise.catch((data) => console.log(data));
