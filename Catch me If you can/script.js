@@ -1,11 +1,17 @@
-let promise = new Promise((resolve, reject) => {
-  console.log("Your Order is Placed");
-  setTimeout(() => {
-    resolve("Your Order is Ready");
-    reject("Something Went Wrong");
-  }, 3000);
-});
+// let promise = new Promise((resolve, reject) => {
+//   console.log("Your Order is Placed");
+//   setTimeout(() => {
+//     resolve("Your Order is Ready");
+//     reject("Something Went Wrong");
+//   }, 3000);
+// });
 
-console.log(promise);
-promise.then((data) => console.log(data));
-promise.catch((data) => console.log(data));
+// console.log(promise);
+// promise.then((data) => console.log(data));
+// promise.catch((data) => console.log(data));
+
+async function a() {
+  return Promise.reject("Something went wrong");
+}
+console.log(a());
+a().catch((data) => console.log(data));
