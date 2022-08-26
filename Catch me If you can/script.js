@@ -52,14 +52,21 @@ const delay = (time) => {
 };
 
 let counter = () => {
-  let timer = 0;
+  let timer = 1;
   let pause = false;
 
   return {
     start: async function start() {
-      await delay(1000);
+      for (let i = timer; ; i++) {
+        timer++;
+        if (pause) break;
+        console.log(i);
+        await delay(1000);
+      }
     },
-    stop: function stop() {},
+    stop: function stop() {
+      pause = true;
+    },
   };
 };
 
@@ -68,4 +75,4 @@ let count = counter();
 count.start();
 setTimeout(() => {
   count.stop();
-}, 6000);
+}, 16000);
