@@ -44,44 +44,28 @@
 //   console.log(msg);
 // });
 
-// const delay = (time) => {
-
-// }
-
-// let counter=()=>{
-//   return{
-//     start:()=>{
-
-//     },
-//     stop:()=>{
-
-//     }
-//   }
-// }
-
-// let count = counter()
-
-// count.start()
-// setTimeout(() => {
-//     count.stop()
-// },6000)
-
-function a(time) {
-  return new Promise((resolve, reject) => {
+const delay = (time) => {
+  let promise = new Promise((resolve, reject) => {
     setTimeout(resolve, time);
   });
-}
+  return promise;
+};
 
-async function start() {
-  // let promise = new Promise((resolve, reject) => {
-  //   setTimeout(() => {
-  //     resolve("resolved");
-  //   }, 1000);
-  // });
+let counter = () => {
+  let timer = 0;
+  let pause = false;
 
-  let result = await a(6000);
+  return {
+    start: async function start() {
+      await delay(1000);
+    },
+    stop: function stop() {},
+  };
+};
 
-  return result;
-}
+let count = counter();
 
-console.log(start());
+count.start();
+setTimeout(() => {
+  count.stop();
+}, 6000);
