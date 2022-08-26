@@ -44,10 +44,6 @@
 //   console.log(msg);
 // });
 
-let counter = ()=>{
-  
-}
-
 const delay = (time) => {};
 
 let count = counter();
