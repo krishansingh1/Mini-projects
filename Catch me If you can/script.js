@@ -44,13 +44,3 @@
 //   console.log(msg);
 // });
 
-const delay = (time) => {
-  
-};
-
-let count = counter();
-
-count.start();
-setTimeout(() => {
-  count.stop();
-}, 6000);
