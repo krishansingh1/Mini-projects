@@ -79,20 +79,20 @@
 //   count.stop();
 // }, 6000);
 
-function randomAsyncFunction() {
-  const time = Math.floor(Math.random() * 100);
-  let x = setTimeout(() => {
-    console.log("Finished!!");
-  }, time);
-}
+// function randomAsyncFunction() {
+//   const time = Math.floor(Math.random() * 100);
+//   let x = setTimeout(() => {
+//     console.log("Finished!!");
+//   }, time);
+// }
 
-async function asyncWithCallback(callback) {
-  randomAsyncFunction();
-  setTimeout(() => {
-    callback();
-  }, 1000);
-}
+// async function asyncWithCallback(callback) {
+//   randomAsyncFunction();
+//   setTimeout(() => {
+//     callback();
+//   }, 1000);
+// }
 
-asyncWithCallback(() => {
-  console.log("fsdfsa");
-});
+// asyncWithCallback(() => {
+//   console.log("fsdfsa");
+// });
