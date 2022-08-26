@@ -73,7 +73,13 @@ function a(time) {
 }
 
 async function start() {
-  let result = await a(1000);
+  // let promise = new Promise((resolve, reject) => {
+  //   setTimeout(() => {
+  //     resolve("resolved");
+  //   }, 1000);
+  // });
+
+  let result = await a(6000);
 
   return result;
 }
