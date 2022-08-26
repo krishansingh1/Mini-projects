@@ -44,3 +44,38 @@
 //   console.log(msg);
 // });
 
+// const delay = (time) => {
+
+// }
+
+// let counter=()=>{
+//   return{
+//     start:()=>{
+
+//     },
+//     stop:()=>{
+
+//     }
+//   }
+// }
+
+// let count = counter()
+
+// count.start()
+// setTimeout(() => {
+//     count.stop()
+// },6000)
+
+function a(time) {
+  return new Promise((resolve, reject) => {
+    setTimeout(resolve, time);
+  });
+}
+
+async function start() {
+  let result = await a(1000);
+
+  return result;
+}
+
+console.log(start());
