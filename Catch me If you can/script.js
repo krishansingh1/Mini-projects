@@ -44,35 +44,55 @@
 //   console.log(msg);
 // });
 
-const delay = (time) => {
-  let promise = new Promise((resolve, reject) => {
-    setTimeout(resolve, time);
-  });
-  return promise;
-};
+// const delay = (time) => {
+//   let promise = new Promise((resolve, reject) => {
+//     setTimeout(resolve, time);
+//   });
+//   return promise;
+// };
 
-let counter = () => {
-  let timer = 1;
-  let pause = false;
+// let counter = () => {
+//   let timer = 0;
+//   let pause = false;
 
-  return {
-    start: async function start() {
-      for (let i = timer; ; i++) {
-        timer++;
-        if (pause) break;
-        console.log(i);
-        await delay(1000);
-      }
-    },
-    stop: function stop() {
-      pause = true;
-    },
-  };
-};
+//   return {
+//     start: async function start() {
+//       for (let i = timer; ; i++) {
+//         timer++;
+//         if (pause) {
+//           break;
+//         }
+//         console.log(i);
+//         await delay(1000);
+//       }
+//     },
+//     stop: function stop() {
+//       pause = true;
+//     },
+//   };
+// };
 
-let count = counter();
+// let count = counter();
 
-count.start();
-setTimeout(() => {
-  count.stop();
-}, 16000);
+// count.start();
+// setTimeout(() => {
+//   count.stop();
+// }, 6000);
+
+function randomAsyncFunction() {
+  const time = Math.floor(Math.random() * 100);
+  let x = setTimeout(() => {
+    console.log("Finished!!");
+  }, time);
+}
+
+async function asyncWithCallback(callback) {
+  randomAsyncFunction();
+  setTimeout(() => {
+    callback();
+  }, 1000);
+}
+
+asyncWithCallback(() => {
+  console.log("fsdfsa");
+});
