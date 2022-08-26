@@ -24,22 +24,35 @@
 // // a().then((data) => console.log(data));
 // a().catch((data) => console.log(data));
 
-const promise1 = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve("a");
-  });
-});
+// const promise1 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve("a");
+//   });
+// });
 
-const promise2 = new Promise((resolve, reject) => {
-  resolve("b");
-});
+// const promise2 = new Promise((resolve, reject) => {
+//   resolve("b");
+// });
 
-const promise3 = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve("c");
-  }, 10);
-});
+// const promise3 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve("c");
+//   }, 10);
+// });
 
-Promise.race([promise1, promise2, promise3]).then((msg) => {
-  console.log(msg);
-});
+// Promise.race([promise1, promise2, promise3]).then((msg) => {
+//   console.log(msg);
+// });
+
+let counter = ()=>{
+  
+}
+
+const delay = (time) => {};
+
+let count = counter();
+
+count.start();
+setTimeout(() => {
+  count.stop();
+}, 6000);
