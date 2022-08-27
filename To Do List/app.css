@@ -16,6 +16,31 @@ h1 {
     margin: 1rem 0;
 }
 
-#container {
+#add {
+    width: 250%;
+    margin-left: -10rem;
+    height: 2.5rem;
+}
+
+#add::placeholder {
+    font-family: 'Poppins', sans-serif;
+    padding-left: 0.5rem;
+    font-size: 1rem;
+}
+
+#total-tasks {
+    margin-left: -10rem;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    padding: 0;
+    height: initial;
+    width: initial;
     
 }

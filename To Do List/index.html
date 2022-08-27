@@ -18,20 +18,16 @@
     </header>
     <main>
         <div id="container">
-            <div>
-                <input type="text" name="Task" id="add" placeholder="Add a task" data-helloWorld="asd" />
-            </div>
-            <div>
-                <span id="total-tasks">Total tasks: <span id="tasks-counter">0</span></span>
-            </div>
+            <input type="text" name="Task" id="add" placeholder="Add a task" data-helloWorld="asd" />
+            <span id="total-tasks">Total tasks: <span id="tasks-counter">0</span></span>
         </div>
-        <div>
-            <ul id="list">
-                <li>One</li>
-                <li>Two</li>
-                <li>Three</li>
-            </ul>
-        </div>
+        <ul id="list">
+            <li>
+                <input type="checkbox" id="task1" data-id="12" class="custom-checkbox">
+                <label for="task1">Buy groceries</label>
+                <img src="bin.svg" class="delete" data-id="12" />
+            </li>
+        </ul>
     </main>
     <script src="script.js"></script>
 </body>
