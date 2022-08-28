@@ -1,36 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="app.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="https://kit.fontawesome.com/a429e5bfb6.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="app.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script
+      src="https://kit.fontawesome.com/a429e5bfb6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
     <title>To Do List</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>Todo List App</h1>
+      <h1>Todo List App</h1>
     </header>
     <main>
-        <div id="container">
-            <input type="text" class="add-task" name="Task" id="add" placeholder="Add a task" data-helloWorld="asd" />
-            <span id="total-tasks">Total tasks: <span id="tasks-counter">0</span></span>
-            <ul id="list">
-                <li>
-                    <input type="checkbox" id="task1" data-id="12" class="custom-checkbox">
-                    <label for="task1">Buy groceries</label>
-                    <span class="delete"><i class="fa-solid fa-trash-can" data-id="12"></i></span>
-                </li>
-            </ul>
-        </div>
+      <div id="container">
+        <input
+          type="text"
+          class="add-task"
+          name="Task"
+          id="add"
+          placeholder="Add a task"
+          data-helloWorld="asd"
+        />
+        <span id="total-tasks"
+          >Total tasks: <span id="tasks-counter">0</span></span
+        >
+        <ul id="list">
+          <li>
+            <input
+              type="checkbox"
+              id="task1"
+              data-id="12"
+              class="custom-checkbox"
+            />
+            <label for="task1">Buy groceries</label>
+            <span class="delete"
+              ><i class="fa-solid fa-trash-can" data-id="12"></i
+            ></span>
+          </li>
+        </ul>
+      </div>
     </main>
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
