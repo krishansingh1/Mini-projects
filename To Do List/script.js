@@ -9,7 +9,11 @@ console.log("working");
 function renderList() {}
 
 //Function for add tasks
-function addTask(task) {}
+function addTask(task) {
+  tasks.push(task);
+  console.log(tasks);
+  renderList();
+}
 
 //Function for deleting tasks
 function deleteTask(taskId) {}
@@ -19,7 +23,7 @@ function markTaskAsComplete(taskId) {}
 
 //Function for showNotifications
 function showNotification(text) {
-  text = text;
+  alert(text);
 }
 
 //Function to handleinputs
@@ -32,6 +36,18 @@ function handleInput(e) {
       showNotification("Text Input cannot be empty");
       return;
     }
+
+    const task = {
+      text: text,
+      id: Date.now().toString(),
+      done: false,
+    };
+
+    console.log(task);
+
+    e.target.value = " ";
+    addTask(task);
   }
 }
+
 addTaskInput.addEventListener("keyup", handleInput);
