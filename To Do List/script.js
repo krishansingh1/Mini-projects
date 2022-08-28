@@ -18,4 +18,20 @@ function deleteTask(taskId) {}
 function markTaskAsComplete(taskId) {}
 
 //Function for showNotifications
-function showNotification(text) {}
+function showNotification(text) {
+  text = text;
+}
+
+//Function to handleinputs
+function handleInput(e) {
+  if (e.key === "Enter") {
+    const text = e.target.value;
+    console.log(text);
+
+    if (!text) {
+      showNotification("Text Input cannot be empty");
+      return;
+    }
+  }
+}
+addTaskInput.addEventListener("keyup", handleInput);
