@@ -29,13 +29,13 @@ function markTaskAsComplete(taskId) {
 
   if (toggleTask.length > 0) {
     const currentTask = toggleTask[0];
-
     currentTask.done = !currentTask.done;
     renderList();
-    showNotification("Task is Completed");
+    showNotification("Task toggled Successfully");
     return;
   }
-  showNotification("Task could not toggle");
+
+  showNotification("Could not toggle the task");
 }
 
 //Function for deleting tasks
