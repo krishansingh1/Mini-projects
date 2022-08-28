@@ -21,6 +21,23 @@ function addTask(task) {
   showNotification("Task cannot be added");
 }
 
+//Function for Check Todo/Task
+function markTaskAsComplete(taskId) {
+  const toggleTask = tasks.filter((task) => {
+    return task.id === taskId;
+  });
+
+  if (toggleTask.length > 0) {
+    const currentTask = toggleTask[0];
+
+    currentTask.done = !currentTask.done;
+    renderList();
+    showNotification("Task is Completed");
+    return;
+  }
+  showNotification("Task could not toggle");
+}
+
 //Function for deleting tasks
 function deleteTask(taskId) {
   const newTasks = tasks.filter((task) => {
@@ -31,9 +48,6 @@ function deleteTask(taskId) {
   renderList();
   showNotification("Task deleted Successfully");
 }
-
-//Function for Check Todo/Task
-function markTaskAsComplete(taskId) {}
 
 //Function for showNotifications
 function showNotification(text) {
