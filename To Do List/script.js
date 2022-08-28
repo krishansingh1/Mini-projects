@@ -1,5 +1,5 @@
 //Tasks
-const tasks = [];
+let tasks = [];
 
 const taskList = document.getElementById("list");
 const addTaskInput = document.getElementById("add");
