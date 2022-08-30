@@ -3,7 +3,6 @@ let tasks = [];
 const taskList = document.getElementById("list");
 const addTaskInput = document.getElementById("add");
 const tasksCounter = document.getElementById("tasks-counter");
-const deleteBtn = document.getElementById("delete");
 
 //Function to Add Task to Dom
 
@@ -33,7 +32,6 @@ function renderList() {
   for (let i = 0; i < tasks.length; i++) {
     addTaskToDom(tasks[i]);
   }
-
   tasksCounter.innerHTML = tasks.length;
 }
 
