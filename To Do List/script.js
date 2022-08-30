@@ -3,6 +3,7 @@ let tasks = [];
 const taskList = document.getElementById("list");
 const addTaskInput = document.getElementById("add");
 const tasksCounter = document.getElementById("tasks-counter");
+const deleteBtn = document.getElementById("delete");
 
 //Function to Add Task to Dom
 
@@ -17,7 +18,9 @@ function addTaskToDom(task) {
               class="custom-checkbox"
             />
             <label for="${task.id}">${task.text}</label>
-            <img src="" class="delete" data-id="${task.id}"/>
+            <span class="delete" id="delete"
+              ><i class="fa-solid fa-trash-can" data-id="${task.id}"></i
+            ></span>
     `;
 
   taskList.append(li);

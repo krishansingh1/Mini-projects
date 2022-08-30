@@ -24,7 +24,6 @@ h1 {
 }
 
 #total-tasks {
-  margin-bottom: 50px;
   font-size: 13px;
   margin-left: 2px;
   color: gray;
@@ -38,6 +37,10 @@ ul {
 
 ul li {
   padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: inherit;
+  align-items: center;
 }
 
 ul li:hover {
@@ -93,13 +96,13 @@ ul li:hover {
   text-decoration: line-through;
 }
 
-.delete{
+.delete i {
   height: 28px;
   padding: 5px 0px;
   border-radius: 3px;
 }
 
-.delete:hover {
+.delete i:hover {
   color: red;
   cursor: pointer;
 }
