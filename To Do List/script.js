@@ -1,4 +1,4 @@
-//Tasks
+Tasks
 let tasks = [];
 
 const taskList = document.getElementById("list");
@@ -108,3 +108,21 @@ function handleInput(e) {
 }
 
 addTaskInput.addEventListener("keyup", handleInput);
+
+// function modifyArray(arr) {
+//   let arr2 = [];
+//   return arr
+//     .map((num) => {
+//       return num + num;
+//     })
+//     .filter((num) => {
+//       if (num > 0) {
+//         return arr2.push(num);
+//       }
+//       if (arr2.includes(undefined)) {
+//         return arr2;
+//       }
+//     });
+// }
+
+// console.log(modifyArray([-1, undefined, 3, 4, -43, 0]));
