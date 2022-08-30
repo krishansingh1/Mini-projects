@@ -17,9 +17,9 @@ function addTaskToDom(task) {
               class="custom-checkbox"
             />
             <label for="${task.id}">${task.text}</label>
-            <span class="delete" id="delete"
-              ><i class="fa-solid fa-trash-can" data-id="${task.id}"></i
-            ></span>
+            <img src="/To Do List/trash-svgrepo-com.svg" class="delete" data-id="${
+              task.id
+            }" />
     `;
 
   taskList.append(li);
@@ -104,8 +104,22 @@ function handleInput(e) {
   }
 }
 
-addTaskInput.addEventListener("keyup", handleInput);
+function handleClickListener(e) {
+  const target = e.target;
+  console.log(target);
+  if (target.className === "delete") {
+    const taskId = target.dataset.id;
+    deleteTask(taskId);
+    return;
+  } else if (target.className === "custom-checkbox") {
+    const taskId = target.id;
+    markTaskAsComplete(taskId);
+    return;
+  }
+}
 
+addTaskInput.addEventListener("keyup", handleInput);
+document.addEventListener("click", handleClickListener);
 // function modifyArray(arr) {
 //   let arr2 = [];
 //   return arr

@@ -96,13 +96,13 @@ ul li:hover {
   text-decoration: line-through;
 }
 
-.delete i {
+.delete {
   height: 28px;
   padding: 5px 0px;
   border-radius: 3px;
 }
 
-.delete i:hover {
+.delete:hover {
   color: red;
   cursor: pointer;
 }
