@@ -1,4 +1,3 @@
-Tasks
 let tasks = [];
 
 const taskList = document.getElementById("list");
