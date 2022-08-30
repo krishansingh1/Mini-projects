@@ -4,6 +4,21 @@ const taskList = document.getElementById("list");
 const addTaskInput = document.getElementById("add");
 const tasksCounter = document.getElementById("tasks-counter");
 
+//Function to fetch data from an API
+
+function fetchData() {
+  fetch("https://jsonplaceholder.typicode.com/todos")
+    .then((Response) => Response.json())
+    .then((data) => {
+      tasks = data.slice(0, 10);
+      console.log(tasks);
+      renderList();
+    })
+    .catch((error) => {
+      console.log("Error:", error);
+    });
+}
+
 //Function to Add Task to Dom
 
 function addTaskToDom(task) {
@@ -13,10 +28,10 @@ function addTaskToDom(task) {
         <input
               type="checkbox"
               id="${task.id}"
-              ${task.done ? "checked" : ""}
+              ${task.completed ? "checked" : ""}
               class="custom-checkbox"
             />
-            <label for="${task.id}">${task.text}</label>
+            <label for="${task.id}">${task.title}</label>
             <img src="/To Do List/trash-svgrepo-com.svg" class="delete" data-id="${
               task.id
             }" />
@@ -50,12 +65,12 @@ function addTask(task) {
 //Function for Check Todo/Task
 function markTaskAsComplete(taskId) {
   const toggleTask = tasks.filter((task) => {
-    return task.id === taskId;
+    return task.id === Number(taskId);
   });
 
   if (toggleTask.length > 0) {
     const currentTask = toggleTask[0];
-    currentTask.done = !currentTask.done;
+    currentTask.completed = !currentTask.completed;
     renderList();
     showNotification("Task toggled Successfully");
     return;
@@ -92,9 +107,9 @@ function handleInput(e) {
     }
 
     const task = {
-      text: text,
-      id: Date.now().toString(),
-      done: false,
+      title: text,
+      id: Date.now(),
+      completed: false,
     };
 
     console.log(task);
@@ -106,7 +121,6 @@ function handleInput(e) {
 
 function handleClickListener(e) {
   const target = e.target;
-  console.log(target);
   if (target.className === "delete") {
     const taskId = target.dataset.id;
     deleteTask(taskId);
@@ -118,8 +132,14 @@ function handleClickListener(e) {
   }
 }
 
-addTaskInput.addEventListener("keyup", handleInput);
-document.addEventListener("click", handleClickListener);
+function initializeApp() {
+  fetchData();
+  addTaskInput.addEventListener("keyup", handleInput);
+  document.addEventListener("click", handleClickListener);
+}
+
+initializeApp();
+
 // function modifyArray(arr) {
 //   let arr2 = [];
 //   return arr
