@@ -187,8 +187,18 @@
 //   });
 // });
 
-const counter = (function () {
-  return (increase = () => {
-    
-  });
-})();
+// function initialize(value) {
+//   return value;
+// }
+
+const increase = ((value) => {
+  return function () {
+    value += 1;
+    return value;
+  };
+})(1);
+
+// function counter() {
+//   initialize(1);
+//   console.log(increase(1));
+// }
