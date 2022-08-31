@@ -187,4 +187,8 @@
 //   });
 // });
 
-
+const counter = (function () {
+  return (increase = () => {
+    
+  });
+})();
