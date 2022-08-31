@@ -6,17 +6,20 @@ const tasksCounter = document.getElementById("tasks-counter");
 
 //Function to fetch data from an API
 
-function fetchData() {
-  fetch("https://jsonplaceholder.typicode.com/todos")
-    .then((Response) => Response.json())
-    .then((data) => {
-      tasks = data.slice(0, 10);
-      console.log(tasks);
-      renderList();
-    })
-    .catch((error) => {
-      console.log("Error:", error);
-    });
+async function fetchData() {
+  // fetch("https://jsonplaceholder.typicode.com/todos")
+  //   .then((Response) => Response.json())
+  //   .then((data) => {
+  //     tasks = data.slice(0, 10);
+  //     console.log(tasks);
+  //     renderList();
+  //   })
+  //   .catch((error) => {
+  //     console.log("Error:", error);
+  //   });
+  const response = await fetch("https://jsonplaceholder.typicode.com/todos");
+  console.log(response);
+  return await response.json();
 }
 
 //Function to Add Task to Dom
