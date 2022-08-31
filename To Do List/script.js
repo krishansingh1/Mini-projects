@@ -6,30 +6,30 @@ const tasksCounter = document.getElementById("tasks-counter");
 
 //Function to fetch data from an API
 
-async function fetchData() {
-  // fetch("https://jsonplaceholder.typicode.com/todos")
-  //   .then((Response) => Response.json())
-  //   .then((data) => {
-  //     tasks = data.slice(0, 10);
-  //     console.log(tasks);
-  //     renderList();
-  //   })
-  //   .catch((error) => {
-  //     console.log("Error:", error);
-  //   });
-  const response = await fetch("https://jsonplaceholder.typicode.com/todos");
-  return await response.json();
-}
+// async function fetchData() {
+//   // fetch("https://jsonplaceholder.typicode.com/todos")
+//   //   .then((Response) => Response.json())
+//   //   .then((data) => {
+//   //     tasks = data.slice(0, 10);
+//   //     console.log(tasks);
+//   //     renderList();
+//   //   })
+//   //   .catch((error) => {
+//   //     console.log("Error:", error);
+//   //   });
+//   const response = await fetch("https://jsonplaceholder.typicode.com/todos");
+//   return await response.json();
+// }
 
-fetchData()
-  .then((data) => {
-    tasks = data.slice(0, 10);
-    console.log(tasks);
-    renderList();
-  })
-  .catch((error) => {
-    console.log("Error", error);
-  });
+// fetchData()
+//   .then((data) => {
+//     tasks = data.slice(0, 10);
+//     console.log(tasks);
+//     renderList();
+//   })
+//   .catch((error) => {
+//     console.log("Error", error);
+//   });
 
 //Function to Add Task to Dom
 
@@ -46,7 +46,7 @@ function addTaskToDom(task) {
             <label for="${task.id}">${task.title}</label>
             <img src="/To Do List/trash-svgrepo-com.svg" class="delete" data-id="${
               task.id
-            }" />
+            }"/>
     `;
 
   taskList.append(li);
@@ -145,7 +145,7 @@ function handleClickListener(e) {
 }
 
 function initializeApp() {
-  fetchData();
+  // fetchData();
   addTaskInput.addEventListener("keyup", handleInput);
   document.addEventListener("click", handleClickListener);
 }
