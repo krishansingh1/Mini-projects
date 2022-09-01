@@ -61,7 +61,7 @@ body {
   background-color: #ffc877;
 }
 
-#button-size input {
+#button-size button {
   border: none;
   width: 18.25rem;
   height: 50px;
@@ -70,7 +70,7 @@ body {
   cursor: pointer;
 }
 
-#button-size input:hover {
+#button-size button:hover {
   background-color: #ffc877;
 }
 
