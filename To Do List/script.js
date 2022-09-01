@@ -187,8 +187,3 @@
 //   });
 // });
 
-// function initialize(value) {
-//   return value;
-// }
-
-
