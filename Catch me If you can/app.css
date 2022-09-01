@@ -4,6 +4,8 @@
   box-sizing: border-box;
 }
 
-.rectangle{
-   
+.rectangle {
+  background-color: purple;
+  width: 8rem;
+  height: 8rem;
 }
