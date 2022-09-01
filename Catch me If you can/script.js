@@ -1,9 +1,24 @@
 let rectangle = document.getElementById("rectangle");
 
 rectangle.addEventListener("mouseenter", (e) => {
-  const randomPosition = rectangle.getBoundingClientRect();
-  if()
+  e.preventDefault();
+  let newQ = newPosition();
+  const position = rectangle.getBoundingClientRect();
+  console.log(position);
+  console.log(newQ);
+  position.top = newQ;
+  position.left = newQ;
 });
+
+function newPosition() {
+  h = window.innerHeight - 50;
+  w = window.innerWidth - 50;
+  nh = Math.floor(Math.random() * h);
+  nw = Math.floor(Math.random() * w);
+  s = Math.floor(Math.random() * 1000) + 500;
+  //   console.log(h, w, nh, nw, s);
+  return [nh, nw, s];
+}
 
 // let promise = new Promise((resolve, reject) => {
 //   console.log("Your Order is Placed");
