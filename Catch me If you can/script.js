@@ -1,21 +1,9 @@
+let rectangle = document.getElementById("rectangle");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+rectangle.addEventListener("mouseenter", (e) => {
+  const randomPosition = rectangle.getBoundingClientRect();
+  if()
+});
 
 // let promise = new Promise((resolve, reject) => {
 //   console.log("Your Order is Placed");
