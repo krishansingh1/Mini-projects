@@ -5,15 +5,6 @@ let operand1 = 0;
 let operand2 = null;
 let operator = null;
 
-
-
-
-
-
-
-
-
-
 // for (let i = 0; i < button.length; i++) {
 //   button[i].addEventListener("click", () => {
 //     let value = button[i].dataset.value;
