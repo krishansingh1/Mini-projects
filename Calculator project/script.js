@@ -1,25 +1,11 @@
-const button = document.querySelectorAll(".button");
-const display = document.getElementById("addNum");
+const buttons = document.querySelectorAll(".button");
 
-let operand1 = 0;
-let operand2 = null;
-let operator = null;
+let string = "";
 
-for (let i = 0; i < button.length; i++) {
-  // console.log(button[i]);
-  button[i].addEventListener("click", () => {
-    let value = button[i].dataset.value;
-    console.log(value);
-    if (value == "+") {
-      operator = "+";
-      operand1 = parseFloat(display.textContent);
-    } else if (value == "=") {
-      operand2 = parseFloat(display.textContent);
-      let result = "operand1 operator operand2";
-      console.log(eval(result));
-    } else {
-      display.innerText += value;
-    }
-    console.log(display);
+console.log(buttons);
+
+Array.from(buttons).forEach((button) => {
+  button.addEventListener("click", (e) => {
+    console.log(e.target.innerHTML);
   });
-}
+});
