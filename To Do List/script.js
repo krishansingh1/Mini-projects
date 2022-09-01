@@ -190,21 +190,5 @@
 // function initialize(value) {
 //   return value;
 // }
-let n = 0;
-function initialize(start) {
-  return start;
-}
 
-function increase() {
-  return function () {
-    n++;
-    return n;
-  };
-}
 
-const counter = (() => {
-  return {
-    initialize,
-    increase,
-  };
-})();
