@@ -1,61 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="app.css" />
     <title>Calculator</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <main id="container">
-        <div id="heading">
-            <h1>Calculator</h1>
-        </div>
-        <div id="open_space">
-            <p id="addNum"></p>
-        </div>
-        <div>
-            <table id="table">
-                <tbody>
-                    <tr>
-                        <td><button class="button" data-value="">AC</button></td>
-                        <td><button class="button" data-value="-">+/-</button></td>
-                        <td><button class="button" data-value="%">%</button></td>
-                        <td id="changeColor" class="button" data-value="/"><button>/</button></td>
-                    </tr>
-                    <tr>
-                        <td><button class="button" data-value="7">7</button></td>
-                        <td><button class="button" data-value="8">8</button></td>
-                        <td><button class="button" data-value="9">9</button></td>
-                        <td id="changeColor1"><button class="button" data-value="*">*</button></td>
-                    </tr>
-                    <tr>
-                        <td><button class="button" data-value="4">4</button></td>
-                        <td><button class="button" data-value="5">5</button></td>
-                        <td><button class="button" data-value="6 ">6</button></td>
-                        <td id="changeColor2"><button class="button" data-value="-">-</button></td>
-                    </tr>
-                    <tr>
-                        <td><button class="button" data-value="1">1</button></td>
-                        <td><button class="button" data-value="2">2</button></td>
-                        <td><button class="button" data-value="3">3</button></td>
-                        <td id="changeColor3"><button class="button" data-value="+">+</button></td>
-                    </tr>
-                    <tr>
-                        <td id="button-size" colspan="2">
-                            <input type="button" value="0" class="button" data-value="0" />
-                        </td>
-                        <td><button class="button" data-value=".">.</button></td>
-                        <td id="changeColor4"><button class="button" data-value="=">=</button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+      <div id="heading">
+        <h1>Calculator</h1>
+      </div>
+      <div id="open_space">
+        <input type="number" id="addNum" />
+      </div>
+      <div>
+        <table id="table">
+          <tbody>
+            <tr>
+              <td><button class="button" data-value="">AC</button></td>
+              <td><button class="button" data-value="-">+/-</button></td>
+              <td><button class="button" data-value="%">%</button></td>
+              <td id="changeColor" class="button" data-value="/">
+                <button>/</button>
+              </td>
+            </tr>
+            <tr>
+              <td><button class="button" data-value="7">7</button></td>
+              <td><button class="button" data-value="8">8</button></td>
+              <td><button class="button" data-value="9">9</button></td>
+              <td id="changeColor1">
+                <button class="button" data-value="*">*</button>
+              </td>
+            </tr>
+            <tr>
+              <td><button class="button" data-value="4">4</button></td>
+              <td><button class="button" data-value="5">5</button></td>
+              <td><button class="button" data-value="6 ">6</button></td>
+              <td id="changeColor2">
+                <button class="button" data-value="-">-</button>
+              </td>
+            </tr>
+            <tr>
+              <td><button class="button" data-value="1">1</button></td>
+              <td><button class="button" data-value="2">2</button></td>
+              <td><button class="button" data-value="3">3</button></td>
+              <td id="changeColor3">
+                <button class="button" data-value="+">+</button>
+              </td>
+            </tr>
+            <tr>
+              <td id="button-size" colspan="2">
+                <input type="button" value="0" class="button" data-value="0" />
+              </td>
+              <td><button class="button" data-value=".">.</button></td>
+              <td id="changeColor4">
+                <button class="button" data-value="=">=</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </main>
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
