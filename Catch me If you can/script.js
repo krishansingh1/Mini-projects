@@ -118,3 +118,5 @@ function newPosition() {
 // asyncWithCallback(() => {
 //   console.log("fsdfsa");
 // });
+
+//How to change a left and right position of box?

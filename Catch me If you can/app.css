@@ -2,10 +2,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: monospace;
 }
 
 .rectangle {
   background-color: purple;
-  width: 8rem;
-  height: 8rem;
+  width: 9rem;
+  height: 9rem;
+  margin-left: 4rem;
+}
+
+#text {
+  position: relative;
+  top: 3.5rem;
+  left: 1.9rem;
+  color: #ffffff;
+  font-size: 1.25rem;
 }
