@@ -1,19 +1,35 @@
 let rectangle = document.getElementById("rectangle");
 let left = 0;
 let right = 0;
-
+const vw = Math.max(
+  document.documentElement.clientWidth || 0,
+  window.innerWidth || 0
+);
+const vh = Math.max(
+  document.documentElement.clientHeight || 0,
+  window.innerHeight || 0
+);
+console.log(vw, vh);
 rectangle.addEventListener("mouseenter", (e) => {
   e.preventDefault();
   let newH = newHeight();
   let newW = newWidth();
   // console.log(newH, newW);
-  left = newH + "px";
-  right = newW + "px";
+  left = newH;
+  right = newW;
   console.log(left);
   console.log(right);
-  if (elementInViewport(rectangle) == true) {
-    rectangle.style.left = left;
-    rectangle.style.top = right;
+
+  rectangle.style.left = left + "px";
+  rectangle.style.top = right + "px";
+
+  if (left === vh) {
+    left = 0;
+    rectangle.style.left = left + "px";
+  }
+  if (right === vw) {
+    right = 0;
+    rectangle.style.top = right + "px";
   }
 });
 
@@ -28,28 +44,6 @@ function newWidth() {
   nw = Math.floor(Math.random() * w);
   return nw;
 }
-
-function elementInViewport(el) {
-  var top = el.offsetTop;
-  var left = el.offsetLeft;
-  var width = el.offsetWidth;
-  var height = el.offsetHeight;
-
-  while (el.offsetParent) {
-    el = el.offsetParent;
-    top += el.offsetTop;
-    left += el.offsetLeft;
-  }
-
-  return (
-    top >= window.pageYOffset &&
-    left >= window.pageXOffset &&
-    top + height <= window.pageYOffset + window.innerHeight &&
-    left + width <= window.pageXOffset + window.innerWidth
-  );
-}
-
-// console.log(elementInViewport(rectangle));
 
 // let promise = new Promise((resolve, reject) => {
 //   console.log("Your Order is Placed");
