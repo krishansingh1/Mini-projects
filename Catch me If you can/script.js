@@ -10,7 +10,7 @@ let rectangle = document.getElementById("rectangle");
 //   window.innerHeight || 0
 // );
 // console.log(vw, vh);
-rectangle.addEventListener("mouseover", catchMe(this));
+rectangle.addEventListener("mouseover", catchMe(e));
 
 // function newHeight() {
 //   h = window.innerHeight - 50;
@@ -35,28 +35,28 @@ function getRandom(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function random() {
-  // e.preventDefault();
-  let newH = newHeight();
-  let newW = newWidth();
-  // console.log(newH, newW);
-  left = newH;
-  right = newW;
-  console.log(left);
-  console.log(right);
+// function random() {
+//   // e.preventDefault();
+//   let newH = newHeight();
+//   let newW = newWidth();
+//   // console.log(newH, newW);
+//   left = newH;
+//   right = newW;
+//   console.log(left);
+//   console.log(right);
 
-  rectangle.style.left = left + "px";
-  rectangle.style.top = right + "px";
+//   rectangle.style.left = left + "px";
+//   rectangle.style.top = right + "px";
 
-  if (left === vh) {
-    left = 0;
-    rectangle.style.left = left + "px";
-  }
-  if (right === vw) {
-    right = 0;
-    rectangle.style.top = right + "px";
-  }
-}
+//   if (left === vh) {
+//     left = 0;
+//     rectangle.style.left = left + "px";
+//   }
+//   if (right === vw) {
+//     right = 0;
+//     rectangle.style.top = right + "px";
+//   }
+// }
 // let promise = new Promise((resolve, reject) => {
 //   console.log("Your Order is Placed");
 //   setTimeout(() => {
