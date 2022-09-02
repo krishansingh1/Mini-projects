@@ -11,8 +11,10 @@ rectangle.addEventListener("mouseenter", (e) => {
   right = newW + "px";
   console.log(left);
   console.log(right);
-  rectangle.style.left = left;
-  rectangle.style.top = right;
+  if (elementInViewport(rectangle) == true) {
+    rectangle.style.left = left;
+    rectangle.style.top = right;
+  }
 });
 
 function newHeight() {
@@ -27,7 +29,27 @@ function newWidth() {
   return nw;
 }
 
-//how to make sure that box will not go outside a viewport using javascript?
+function elementInViewport(el) {
+  var top = el.offsetTop;
+  var left = el.offsetLeft;
+  var width = el.offsetWidth;
+  var height = el.offsetHeight;
+
+  while (el.offsetParent) {
+    el = el.offsetParent;
+    top += el.offsetTop;
+    left += el.offsetLeft;
+  }
+
+  return (
+    top >= window.pageYOffset &&
+    left >= window.pageXOffset &&
+    top + height <= window.pageYOffset + window.innerHeight &&
+    left + width <= window.pageXOffset + window.innerWidth
+  );
+}
+
+// console.log(elementInViewport(rectangle));
 
 // let promise = new Promise((resolve, reject) => {
 //   console.log("Your Order is Placed");
