@@ -1,24 +1,33 @@
 let rectangle = document.getElementById("rectangle");
+let left = 0;
+let right = 0;
 
 rectangle.addEventListener("mouseenter", (e) => {
   e.preventDefault();
-  let newQ = newPosition();
-  const position = rectangle.getBoundingClientRect();
-  console.log(position);
-  console.log(newQ);
-  position.top = newQ;
-  position.left = newQ;
+  let newH = newHeight();
+  let newW = newWidth();
+  // console.log(newH, newW);
+  left = newH + "px";
+  right = newW + "px";
+  console.log(left);
+  console.log(right);
+  rectangle.style.left = left;
+  rectangle.style.top = right;
 });
 
-function newPosition() {
+function newHeight() {
   h = window.innerHeight - 50;
-  w = window.innerWidth - 50;
   nh = Math.floor(Math.random() * h);
-  nw = Math.floor(Math.random() * w);
-  s = Math.floor(Math.random() * 1000) + 500;
-  //   console.log(h, w, nh, nw, s);
-  return [nh, nw, s];
+  return nh;
 }
+
+function newWidth() {
+  w = window.innerWidth - 50;
+  nw = Math.floor(Math.random() * w);
+  return nw;
+}
+
+//how to make sure that box will not go outside a viewport using javascript?
 
 // let promise = new Promise((resolve, reject) => {
 //   console.log("Your Order is Placed");
@@ -118,5 +127,3 @@ function newPosition() {
 // asyncWithCallback(() => {
 //   console.log("fsdfsa");
 // });
-
-//How to change a left and right position of box?
