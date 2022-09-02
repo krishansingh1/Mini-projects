@@ -1,17 +1,42 @@
 let rectangle = document.getElementById("rectangle");
-let left = 0;
-let right = 0;
-const vw = Math.max(
-  document.documentElement.clientWidth || 0,
-  window.innerWidth || 0
-);
-const vh = Math.max(
-  document.documentElement.clientHeight || 0,
-  window.innerHeight || 0
-);
-console.log(vw, vh);
-rectangle.addEventListener("mouseenter", (e) => {
-  e.preventDefault();
+// let left = 0;
+// let right = 0;
+// const vw = Math.max(
+//   document.documentElement.clientWidth || 0,
+//   window.innerWidth || 0
+// );
+// const vh = Math.max(
+//   document.documentElement.clientHeight || 0,
+//   window.innerHeight || 0
+// );
+// console.log(vw, vh);
+rectangle.addEventListener("mouseover", catchMe);
+
+// function newHeight() {
+//   h = window.innerHeight - 50;
+//   nh = Math.floor(Math.random() * h);
+//   return nh;
+// }
+
+// function newWidth() {
+//   w = window.innerWidth - 50;
+//   nw = Math.floor(Math.random() * w);
+//   return nw;
+// }
+
+function catchMe(el) {
+  el.style.top = getRandom(0, window.innerHeight - el.offsetHeight) + "px";
+  el.style.left = getRandom(0, window.innerWidth - el.offsetWidth) + "px";
+}
+
+function getRandom(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function random() {
+  // e.preventDefault();
   let newH = newHeight();
   let newW = newWidth();
   // console.log(newH, newW);
@@ -31,20 +56,7 @@ rectangle.addEventListener("mouseenter", (e) => {
     right = 0;
     rectangle.style.top = right + "px";
   }
-});
-
-function newHeight() {
-  h = window.innerHeight - 50;
-  nh = Math.floor(Math.random() * h);
-  return nh;
 }
-
-function newWidth() {
-  w = window.innerWidth - 50;
-  nw = Math.floor(Math.random() * w);
-  return nw;
-}
-
 // let promise = new Promise((resolve, reject) => {
 //   console.log("Your Order is Placed");
 //   setTimeout(() => {
