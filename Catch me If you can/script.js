@@ -18,6 +18,12 @@ rectangle.addEventListener("mouseover", (e) => {
     getRandom(0, window.innerWidth - rectangle.offsetWidth) + "px";
 });
 
+function getRandom(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
 // function newHeight() {
 //   h = window.innerHeight - 50;
 //   nh = Math.floor(Math.random() * h);
@@ -29,12 +35,6 @@ rectangle.addEventListener("mouseover", (e) => {
 //   nw = Math.floor(Math.random() * w);
 //   return nw;
 // }
-
-function getRandom(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min;
-}
 
 // function random() {
 //   // e.preventDefault();
