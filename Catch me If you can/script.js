@@ -10,7 +10,7 @@ let rectangle = document.getElementById("rectangle");
 //   window.innerHeight || 0
 // );
 // console.log(vw, vh);
-rectangle.addEventListener("mouseover", catchMe);
+rectangle.addEventListener("mouseover", catchMe(this));
 
 // function newHeight() {
 //   h = window.innerHeight - 50;
