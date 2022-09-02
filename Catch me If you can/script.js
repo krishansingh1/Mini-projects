@@ -10,7 +10,13 @@ let rectangle = document.getElementById("rectangle");
 //   window.innerHeight || 0
 // );
 // console.log(vw, vh);
-rectangle.addEventListener("mouseover", catchMe(e));
+rectangle.addEventListener("mouseover", (e) => {
+  e.preventDefault();
+  rectangle.style.top =
+    getRandom(0, window.innerHeight - rectangle.offsetHeight) + "px";
+  rectangle.style.left =
+    getRandom(0, window.innerWidth - rectangle.offsetWidth) + "px";
+});
 
 // function newHeight() {
 //   h = window.innerHeight - 50;
@@ -23,11 +29,6 @@ rectangle.addEventListener("mouseover", catchMe(e));
 //   nw = Math.floor(Math.random() * w);
 //   return nw;
 // }
-
-function catchMe(el) {
-  el.style.top = getRandom(0, window.innerHeight - el.offsetHeight) + "px";
-  el.style.left = getRandom(0, window.innerWidth - el.offsetWidth) + "px";
-}
 
 function getRandom(min, max) {
   min = Math.ceil(min);
