@@ -40,7 +40,8 @@ let countInterval;
 
 function startCounter() {
   let number = parseInt(document.getElementById("number").value);
-  // console.log(number);
+  console.log(number);
+
   if (isNaN(number)) {
     alert("Please Enter a Number");
     return;
@@ -51,9 +52,9 @@ function startCounter() {
     return;
   }
 
-  var currentNo = document.querySelector(".counter .current");
-  var nextNo = document.querySelector(".counter .next");
-  var count = 0;
+  let currentNo = document.querySelector(".counter .current");
+  let nextNo = document.querySelector(".counter .next");
+  let count = 0;
 
   // If user clicks on 'Start Counter' button again - remove this function and below 2 lines if you don't consider this situation
   resetNumbers(currentNo, nextNo);
@@ -72,7 +73,7 @@ function startCounter() {
   }, 1500);
 }
 
-function resetNumbers(currentNo, nextNo, end) {
+function resetNumbers(currentNo, nextNo) {
   currentNo.innerText = 0;
   nextNo.innerText = 1;
 }
