@@ -47,7 +47,7 @@ function startCounter() {
     return;
   }
 
-  if (number < 1 || number > 9) {
+  if (number < 1 || number > 99999) {
     alert("Range out of bounds");
     return;
   }
