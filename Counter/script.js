@@ -47,7 +47,7 @@ function startCounter() {
   }
 
   if (number < 1 || number > 9) {
-    alert("Range out of bonds");
+    alert("Range out of bounds");
     return;
   }
 
