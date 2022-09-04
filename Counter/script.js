@@ -52,7 +52,7 @@ function startCounter() {
     return;
   }
 
-  let currentNo = document.querySelector(".counter .current_one");
+  let currentNo = document.querySelector(".counter .current");
   let nextNo = document.querySelector(".counter .next");
   let count = 0;
 

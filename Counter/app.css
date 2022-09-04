@@ -83,7 +83,7 @@ p {
   padding-top: 0.5rem;
 }
 
-p.current_one {
+/* p.current_one {
   position: relative;
   left: 10rem;
   z-index: 1;
@@ -110,12 +110,15 @@ p.current_five {
   position: relative;
   left: -10rem;
   top: -16rem;
-}
+} */
 
 p.next {
-  position: absolute;
+  /* position: absolute;
   top: -0.1px;
-  left: 37.5rem;
+  left: 37.5rem; */
+  position: absolute;
+  top: 100px;
+  left: 27.9rem;
 }
 
 p.transition {
