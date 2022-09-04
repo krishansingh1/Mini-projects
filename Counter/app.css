@@ -71,7 +71,7 @@ body {
   top: 3rem;
 }
 
-p.current_one {
+p {
   text-align: center;
   margin: 0 auto;
   width: 4rem;
@@ -81,82 +81,40 @@ p.current_one {
   background-color: white;
   font-size: 3rem;
   padding-top: 0.5rem;
+}
+
+p.current_one {
   position: relative;
   left: 10rem;
 }
 
 p.current_two {
-  text-align: center;
-  margin: 0 auto;
-  width: 4rem;
-  height: 4rem;
-  border-top: 2px solid black;
-  box-shadow: 0 0 5px 1px white;
-  background-color: white;
-  font-size: 3rem;
-  padding-top: 0.5rem;
   position: relative;
   left: 5rem;
   top: -4rem;
 }
 
 p.current_three {
-  text-align: center;
-  margin: 0 auto;
-  width: 4rem;
-  height: 4rem;
-  border-top: 2px solid black;
-  box-shadow: 0 0 5px 1px white;
-  background-color: white;
-  font-size: 3rem;
-  padding-top: 0.5rem;
   position: relative;
   top: -8rem;
 }
 
 p.current_four {
-  text-align: center;
-  margin: 0 auto;
-  width: 4rem;
-  height: 4rem;
-  border-top: 2px solid black;
-  box-shadow: 0 0 5px 1px white;
-  background-color: white;
-  font-size: 3rem;
-  padding-top: 0.5rem;
   position: relative;
   left: -5rem;
   top: -12rem;
 }
 
 p.current_five {
-  text-align: center;
-  margin: 0 auto;
-  width: 4rem;
-  height: 4rem;
-  border-top: 2px solid black;
-  box-shadow: 0 0 5px 1px white;
-  background-color: white;
-  font-size: 3rem;
-  padding-top: 0.5rem;
   position: relative;
   left: -10rem;
   top: -16rem;
 }
 
 p.next {
-  text-align: center;
-  margin: 0 auto;
-  width: 4rem;
-  height: 4rem;
-  border-top: 2px solid black;
-  box-shadow: 0 0 5px 1px white;
-  background-color: white;
-  font-size: 3rem;
-  padding-top: 0.5rem;
   position: absolute;
-  left: 37.52rem;
-  top: -0.01rem;
+  top: 100px;
+  left: 37.5rem;
 }
 
 p.transition {
