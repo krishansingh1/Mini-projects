@@ -1,7 +1,5 @@
 const button = document.getElementById("btn_counter");
 const input = document.getElementById("num_counter_input");
-const currentNumber = document.querySelectorAll(".counter .current_one");
-const nextNumber = document.querySelectorAll(".counter .next_one");
 let countInterval;
 
 button.addEventListener("click", () => {
@@ -16,7 +14,8 @@ button.addEventListener("click", () => {
   if (number < 1 || number > 99999) {
     window.alert("Range of Bound! Please Enter a number between 1 and 99999");
   }
-
+  let currentNumber = document.querySelectorAll(".counter .current_one");
+  let nextNumber = document.querySelectorAll(".counter .next_one");
   let count = 0;
 
   resetNumber(currentNumber, nextNumber);
@@ -38,11 +37,11 @@ function resetNumber(currentNumber, nextNumber) {
   nextNumber.innerText = 1;
 }
 
-function increaseCount() {
-  nextNo.classList.add("animate");
+function increaseCount(currentNumber, nextNumber) {
+  nextNumber.classList.add("animate");
 
   setTimeout(function () {
-    currentNumber.innerText = nextNo.innerText;
+    currentNumber.innerText = nextNumber.innerText;
     nextNumber.classList.remove("animate");
     nextNumber.innerText = parseInt(nextNumber.innerText) + 1;
   }, 1000);
