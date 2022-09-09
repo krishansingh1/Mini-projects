@@ -17,6 +17,8 @@ button.addEventListener("click", () => {
   }
   let currentNumber1 = document.querySelector(".counter .current_one");
   let nextNumber1 = document.querySelector(".counter .next_one");
+  let currentNumber2 = document.querySelector(".current .current_two");
+  let nextNumber2 = document.querySelector("current .next_two");
   let count = 0;
 
   resetNumber(currentNumber1, nextNumber1);
@@ -39,12 +41,14 @@ function resetNumber(currentNumber, nextNumber) {
   nextNumber.innerText = 1;
 }
 
-function increaseCount(currentNumber, nextNumber) {
+function increaseCount(currentNumber, nextNumber, currentNumber2, nextNumber2) {
   nextNumber.classList.add("animate");
 
   setTimeout(function () {
     currentNumber.innerText = nextNumber.innerText;
     nextNumber.classList.remove("animate");
     nextNumber.innerText = parseInt(nextNumber.innerText) + 1;
+    if (currentNumber == 10) {
+    }
   }, 1000);
 }
