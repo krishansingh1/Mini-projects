@@ -26,6 +26,12 @@ body {
   color: #ffffff;
 }
 
-#num_input_counter {
-  width: 4rem;
+#counter_input {
+  display: flex;
+  justify-content: space-around;
+}
+
+#counter_input input[type="number"] {
+    width: 25rem;
+    height: 2rem;
 }
