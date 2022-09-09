@@ -3,3 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  font-family: monospace;
+  background-color: #d8f8ff;
+}
+
+#container {
+  padding: 5rem 0;
+  text-align: center;
+  background-image: linear-gradient(to right, #a6eff1, #edaad8);
+}
