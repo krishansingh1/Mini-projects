@@ -83,35 +83,6 @@ p {
   padding-top: 0.5rem;
 }
 
-/* p.current_one {
-  position: relative;
-  left: 10rem;
-  z-index: 1;
-}
-
-p.current_two {
-  position: relative;
-  left: 5rem;
-  top: -4rem;
-}
-
-p.current_three {
-  position: relative;
-  top: -8rem;
-}
-
-p.current_four {
-  position: relative;
-  left: -5rem;
-  top: -12rem;
-}
-
-p.current_five {
-  position: relative;
-  left: -10rem;
-  top: -16rem;
-} */
-
 p.next {
   /* position: absolute;
   top: -0.1px;
