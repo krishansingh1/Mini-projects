@@ -1,3 +1,7 @@
 const input = document.getElementById("num_counter_input");
 
-console.log(input);
+const button = document.getElementById("btn_counter");
+
+button.addEventListener("click", () => {
+  console.log(input);
+});
