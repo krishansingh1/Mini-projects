@@ -61,5 +61,23 @@ body {
   margin-left: 13rem;
   height: 10rem;
   display: flex;
+  justify-content: center;
   background-color: #555555;
+}
+
+.num_counter {
+  text-align: center;
+  margin: 0 auto;
+  width: 4rem;
+  height: 4rem;
+  border-top: 2px solid black;
+  box-shadow: 0 0 5px 1px white;
+  background-color: white;
+  font-size: 3rem;
+  padding-top: 0.5rem;
+}
+
+.counter_one {
+  margin-right: 1.2rem;
+  margin-top: 3rem;
 }
