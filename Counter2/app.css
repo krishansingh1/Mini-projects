@@ -12,5 +12,20 @@ body {
 #container {
   padding: 5rem 0;
   text-align: center;
+  width: 93%;
+  margin-left: 3rem;
+  margin-top: 4rem;
   background-image: linear-gradient(to right, #a6eff1, #edaad8);
+}
+
+#text_counter {
+  position: relative;
+  top: -2rem;
+  font-size: 1.3rem;
+  letter-spacing: 8px;
+  color: #ffffff;
+}
+
+#num_input_counter{
+
 }
