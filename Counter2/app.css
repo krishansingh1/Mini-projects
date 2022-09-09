@@ -55,29 +55,43 @@ body {
   box-shadow: 0 0 10px 2px white;
 }
 
-#counter {
-  margin-top: 3rem;
-  width: 70%;
-  margin-left: 13rem;
-  height: 10rem;
+#counter-container {
+  background-color: #555555;
+  height: 200px;
+  width: 80%;
+  margin: auto;
   display: flex;
   justify-content: center;
-  background-color: #555555;
 }
 
-.num_counter {
-  text-align: center;
-  margin: 0 auto;
-  width: 4rem;
-  height: 4rem;
-  border-top: 2px solid black;
-  box-shadow: 0 0 5px 1px white;
-  background-color: white;
+.counter {
+  display: inline-block;
+  background-color: aliceblue;
+  width: 15%;
+  max-width: 80px;
+  height: 80px;
+  margin: auto 10px;
+  box-shadow: 0px 0px 5px white;
+  position: relative;
+  overflow: hidden;
+}
+
+.counter p {
   font-size: 3rem;
-  padding-top: 0.5rem;
+  text-align: center;
+  margin: 0;
+  width: 100%;
+  line-height: 80px;
+  border-top: 2px solid black;
+  background-color: aliceblue;
 }
 
-.counter_display {
-  margin-right: 1.2rem;
-  margin-top: 3rem;
+p.next {
+  position: absolute;
+  top: 80px;
+}
+
+p.animate {
+  transition-duration: 0.5s;
+  top: 0px;
 }
