@@ -5,6 +5,10 @@
   font-family: sans-serif;
 }
 
+body {
+  min-height: 100%;
+}
+
 #progress_bar {
   border: 1px solid green;
   width: 15rem;
