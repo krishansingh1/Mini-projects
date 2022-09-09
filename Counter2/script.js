@@ -17,7 +17,6 @@ button.addEventListener("click", () => {
   }
 
   Array.from(currentNumber).forEach((current) => {
-    console.log(current);
+    if(current)
   });
-  //   console.log(nextNumber);
 });
