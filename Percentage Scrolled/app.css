@@ -10,6 +10,24 @@ body {
 }
 
 /*Header*/
+
+#progress_bar {
+  border: 1px solid green;
+  width: 13rem;
+  border-radius: 5rem;
+  padding: 5px 0;
+  position: sticky;
+  top: 0px;
+  left: 67rem;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px green;
+}
+
+#bar_text {
+  color: green;
+  text-align: center;
+}
+
 #resume-header {
   opacity: 0.8;
   height: 65vh;
@@ -291,7 +309,6 @@ section:nth-child(2n + 1) {
   border-radius: 50%;
   width: 2.5rem;
   height: 2.5rem;
-  background-image: url("./281512005_2809211209374520_7547766038318686579_n.jpg");
   background-size: contain;
   background-repeat: no-repeat;
 }
