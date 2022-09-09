@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+#progress_bar {
+  border: 1px solid green;
+  width: 15rem;
+  border-radius: 5rem;
+  padding: 5px 0;
+  position: sticky;
+  top: 2rem;
+  left: 66rem;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px green;
+  z-index: 1;
+}
+
+#bar_text {
+  color: green;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+#progress_details {
+  text-align: center;
+  width: 75%;
+  margin-left: 10rem;
+  margin-top: 1.2rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: gray;
+}
+
+#progress_imagescontainer {
+  margin-top: 5rem;
+}
+
+#progress_imagescontainer p {
+  text-align: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: blue;
+}
+
+#progress_images {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-left: 13rem;
+  width: 75%;
+  margin-top: 3rem;
+}
+
+#progress_images img {
+  width: 20rem;
+  margin-right: 5rem;
+}
