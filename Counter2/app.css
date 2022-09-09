@@ -11,7 +11,7 @@ body {
 
 #container {
   padding-top: 6rem;
-  padding-bottom: 2.5rem;
+  padding-bottom: 2.8rem;
   text-align: center;
   width: 93%;
   margin-left: 3rem;
@@ -24,6 +24,7 @@ body {
   top: -2rem;
   font-size: 1.4rem;
   letter-spacing: 7px;
+  word-spacing: 5px;
   color: #ffffff;
   text-transform: capitalize;
 }
@@ -35,11 +36,30 @@ body {
 }
 
 #counter_input input[type="number"] {
-  width: 23rem;
+  width: 25rem;
   height: 2.5rem;
   font-size: 1.3rem;
 }
 
-#btn_counter{
- 
+#btn_counter {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: black;
+  border-radius: 2rem;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#btn_counter:hover {
+  box-shadow: 0 0 10px 2px white;
+}
+
+#counter {
+  margin-top: 3rem;
+  width: 70%;
+  margin-left: 13rem;
+  height: 10rem;
+  display: flex;
+  background-color: #555555;
 }
