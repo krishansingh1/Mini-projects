@@ -26,6 +26,6 @@ body {
   color: #ffffff;
 }
 
-#num_input_counter{
-
+#num_input_counter {
+  width: 4rem;
 }
