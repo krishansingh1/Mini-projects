@@ -13,12 +13,13 @@ button.addEventListener("click", () => {
 
   if (number < 1 || number > 99999) {
     window.alert("Range of Bound! Please Enter a number between 1 and 99999");
+    return;
   }
-  let currentNumber = document.querySelectorAll(".counter .current_one");
-  let nextNumber = document.querySelectorAll(".counter .next_one");
+  let currentNumber1 = document.querySelector(".counter .current_one");
+  let nextNumber1 = document.querySelector(".counter .next_one");
   let count = 0;
 
-  resetNumber(currentNumber, nextNumber);
+  resetNumber(currentNumber1, nextNumber1);
 
   clearInterval(countInterval);
 
@@ -26,8 +27,9 @@ button.addEventListener("click", () => {
     if (count == number) {
       clearInterval(countInterval);
       window.alert("Counter has Stopped");
+      return;
     }
-    increaseCount(currentNumber, nextNumber);
+    increaseCount(currentNumber1, nextNumber1);
     count++;
   }, 1500);
 });
