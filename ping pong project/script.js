@@ -31,10 +31,10 @@ let highScore = 11;
 //Keyboard Event Listener for starting a game
 document.addEventListener("keydown", (e) => {
   //press enter to start game
-  if (e.key == "Enter") {
+  if (e.key === "Enter") {
     //Game Logic
-    gameState = gameState == "start" ? "play" : "start";
-    if (gameState == "play") {
+    gameState = gameState === "start" ? "play" : "start";
+    if (gameState === "play") {
       message.innerHTML = "Game Started";
       message.style.left = 44 + "vw";
       requestAnimationFrame(() => {
@@ -48,9 +48,9 @@ document.addEventListener("keydown", (e) => {
   }
 
   //Manipulating Rods using Key event property
-  if (gameState == "play") {
+  if (gameState === "play") {
     //If w is pressed
-    if (e.key == "w" || e.key == "W") {
+    if (e.key === "w" || e.key === "W") {
       //Manipulating Paddle 1
       paddle_1.style.top =
         Math.max(
@@ -69,7 +69,7 @@ document.addEventListener("keydown", (e) => {
     }
 
     //If S is pressed
-    if (e.key == "s" || e.key == "S") {
+    if (e.key === "s" || e.key === "S") {
       //Manipulating Paddle 1
       paddle_1.style.top =
         Math.min(
@@ -159,15 +159,16 @@ function moveBall(dx, dy, dxd, dyd) {
     moveBall(dx, dy, dxd, dyd);
   });
 }
+
 //Highest Score on every game
 document.addEventListener("keypress", (e) => {
-  if (e.key == "Enter") {
+  if (e.key === "Enter") {
     let Player1Score = localStorage.getItem("Score1");
     let Player2Score = localStorage.getItem("Score2");
-    if (Player1Score == 0 && Player2Score == 0) {
+
+    if (Player1Score === 0 && Player2Score === 0) {
       window.alert("This is you first Time. Use W and S to Play");
-    }
-    if (Player1Score < Player2Score) {
+    } else if (Player1Score < Player2Score) {
       window.alert("Highest Score is " + Player2Score + " of" + " Player2");
     } else if (Player2Score < Player1Score) {
       window.alert("Highest Score is: " + Player1Score + " of" + " Player1");

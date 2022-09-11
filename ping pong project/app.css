@@ -2,27 +2,27 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
+  }
+  
+  body {
     height: 100vh;
     width: 100vw;
     background-color: #000000;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-/*Board*/
-.board {
+  }
+  
+  /*Board*/
+  .board {
     height: 85vh;
     width: 80vw;
     background-color: #ffffff;
     border-radius: 14px;
-}
-
-/*Ball*/
-.ball {
+  }
+  
+  /*Ball*/
+  .ball {
     height: 30px;
     width: 30px;
     border-radius: 50%;
@@ -30,10 +30,10 @@ body {
     top: calc(50% - 15px);
     left: calc(50% - 15px);
     background-color: #000000;
-}
-
-/*Paddels*/
-.paddle_1 {
+  }
+  
+  /*Paddels*/
+  .paddle_1 {
     height: 150px;
     width: 18px;
     position: fixed;
@@ -41,9 +41,9 @@ body {
     background-color: #000000;
     margin-left: 0.1rem;
     border-radius: 0.5rem;
-}
-
-.paddle_2 {
+  }
+  
+  .paddle_2 {
     height: 150px;
     width: 18px;
     position: fixed;
@@ -51,10 +51,10 @@ body {
     left: 75.6rem;
     background-color: black;
     border-radius: 0.5rem;
-}
-
-/*Player Score*/
-.player_1_score {
+  }
+  
+  /*Player Score*/
+  .player_1_score {
     height: 50px;
     width: 50px;
     color: #000000;
@@ -62,9 +62,9 @@ body {
     position: fixed;
     left: 30vw;
     margin-top: 30px;
-}
-
-.player_2_score {
+  }
+  
+  .player_2_score {
     height: 50px;
     width: 50px;
     color: #000000;
@@ -72,10 +72,10 @@ body {
     position: fixed;
     left: 70vw;
     margin-top: 30px;
-}
-
-/*Message*/
-.message {
+  }
+  
+  /*Message*/
+  .message {
     position: fixed;
     height: 10vh;
     width: 30vw;
@@ -84,4 +84,5 @@ body {
     font-family: monospace;
     left: 38vw;
     margin: 30px auto auto auto;
-}
+  }
+  
