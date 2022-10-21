@@ -121,7 +121,7 @@
 
       const task = {
         title: text,
-        id: Date.now(),
+        id: Date.now().toString(),
         completed: false,
       };
 
@@ -186,4 +186,3 @@
 //     console.log(`Body: ${list.body}`);
 //   });
 // });
-
